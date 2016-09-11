@@ -1,0 +1,13 @@
+{% from "couchpotato/map.jinja" import couchpotato with context %}
+
+# Configuration file for CouchPotato daemon.
+
+# Path to CouchPotato configuration file.
+CP_CONF={{ couchpotato.configdir }}couchpotato.ini
+
+# Path to CouchPotato data directory.
+CP_DATA={{ couchpotato.datadir }}
+
+# Path to Couchpotato PID file
+CP_PIDFILE={{ couchpotato.piddir }}couchpotato.pid
+

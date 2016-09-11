@@ -1,0 +1,17 @@
+{% from "couchpotato/map.jinja" import couchpotato with context %}
+
+[Unit]
+Description=CouchPotato application instance
+After=network.target
+
+[Service]
+EnvironmentFile={{ couchpotato.service_config }}
+ExecStart=/usr/bin/python2.7 {{ couchpotato.homedir }}CouchPotato.py --daemon --config_file "$CP_CONF" --data_dir "$CP_DATA" --pid_file="$CP_PIDFILE"
+GuessMainPID=no
+Type=forking
+User={{ couchpotato.user }}
+Group={{ couchpotato.group }}
+PIDFile="$CP_PIDFILE"
+
+[Install]
+WantedBy=multi-user.target
