@@ -3,6 +3,7 @@
 
 include:
   - couchpotato.package
+  - python.set_version27
 
 # start the couchpotato process
 couchpotato:
@@ -12,6 +13,7 @@ couchpotato:
     - require:
       - file: couchpotato_service_file
       - sls: couchpotato.package
+      - sls: python.set_version27
     - watch:
       - file: couchpotato_service_config
 
