@@ -48,9 +48,9 @@ couchpotato_packages:
 couchpotato_datadir:
   file.directory:
     - name: {{ couchpotato.datadir }}
-    #- mode: 777
+    - mode: 777
 
 couchpotato_configdir:
   file.directory:
     - name: {{ couchpotato.configdir }}
-    #- mode: 777
+    - mode: 777
