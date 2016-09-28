@@ -37,7 +37,8 @@ couchpotato_service_file:
       - git: couchpotato-git
 
 # daemon-reload when unit file has changed  
-service.systemctl_reload:
+couchpotato_systemctl_reload:
   module.run:
+    - name: service.systemctl_reload
     - onchanges:
       - file: couchpotato_service_file
