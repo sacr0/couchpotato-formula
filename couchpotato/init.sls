@@ -12,6 +12,7 @@ couchpotato:
     - name: {{ couchpotato.service }}
     - require:
       - file: couchpotato_service_file
+      - module: couchpotato_systemctl_reload
       - sls: couchpotato.package
       - sls: python.set_version27
     - watch:
