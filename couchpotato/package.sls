@@ -33,6 +33,7 @@ couchpotato-git:
   git.latest:
     - name: {{ couchpotato.git }}
     - target: {{ couchpotato.homedir }}
+    - user: {{ couchpotato.user }}
     - require:
       - file: couchpotato_homedir
       - pkg: git
