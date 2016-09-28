@@ -35,3 +35,9 @@ couchpotato_service_file:
     - require:
       - file: couchpotato_service_config
       - git: couchpotato-git
+
+# daemon-reload when unit file has changed  
+service.systemctl_reload:
+  module.run:
+    - onchanges:
+      - file: couchpotato_service_file
