@@ -11,6 +11,7 @@
     'user': 'couchpotato',
     'group': 'couchpotato',
     'piddir': '/var/run/couchpotato/',
+    'enable': 'True',
   },
   'Arch': {
     'pkgs': ['python','unrar','unzip','python2-lxml','python2-pyopenssl'],
@@ -26,5 +27,6 @@
     'user': 'couchpotato',
     'group': 'couchpotato',
     'piddir': '/var/run/couchpotato/',
+    'enable': 'True',
   },
 }, grain='os_family', merge=salt['pillar.get']('couchpotato:lookup')) %}

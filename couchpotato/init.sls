@@ -8,7 +8,7 @@ include:
 # start the couchpotato process
 couchpotato:
   service.running:
-    - enable: True
+    - enable: {{ couchpotato.enable }}
     - name: {{ couchpotato.service }}
     - require:
       - file: couchpotato_service_file
