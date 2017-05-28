@@ -53,7 +53,7 @@ class Base(TorrentProvider):
               torrent_age = datetime.now() - datetime.strptime(entries[15 + extend].get_text()[:8] + ' ' + entries[15 + extend].get_text()[-10::], '%H:%M:%S %d/%m/%Y')
               
                 #only list torrent newer than...
-              if torrent_age.days < {{ salt['pillar.get']('couchpotato:hdtorrents_age', {}) }}:
+              if torrent_age.days < {{ salt['pillar.get']('couchpotato:hdtorrents_age', "356") }}:
                       results.append({
                                       'id': torrent_id,
                                       'name': entries[20 + extend].find('a')['title'].strip('History - ').replace('Blu-ray', 'bd50'),
@@ -93,7 +93,7 @@ class Base(TorrentProvider):
                   torrent_age = datetime.now() - datetime.strptime(cells[5 + extend].get_text(), '%H:%M:%S %d/%m/%Y')
 
                 #only list torrent newer than...
-                  if torrent_age.days < {{ salt['pillar.get']('couchpotato:hdtorrents_age', {}) }}:
+                  if torrent_age.days < {{ salt['pillar.get']('couchpotato:hdtorrents_age', "356") }}:
                           results.append({
                                           'id': torrent_id,
                                           'name': cells[1 + extend].find('b').get_text().strip('\t ').replace('Blu-ray', 'bd50'),
